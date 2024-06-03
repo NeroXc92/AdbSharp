@@ -1,4 +1,4 @@
-# Media
+# Device.Handle.Media
 Control Android playback system
 ``` csharp
 Media pb = handle.Media;
