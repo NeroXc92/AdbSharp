@@ -43,6 +43,10 @@ device.Permission = Permission.Superuser;
 // Normal,
 // Superuser
 ```
+Get handle
+``` csharp
+Handle handle = device.Handle;
+```
 ## Methods
 Disconnect
 ``` csharp
