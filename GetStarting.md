@@ -22,19 +22,17 @@ foreach (Device device in devices)
 ```
 
 ### Output
-```csharp
-// Output
-
-// Serial number: 5793298f
-// Mode: Device
-// Model: Redmi 10C
-// Codename: fog
-// Product: lineage_fog
-// Transport id: 1
-// Superuser mode: False
-// Threads count: 1
-// Max threads count: 4
-// Threads incrase timeout: 0 ms
+```
+Serial number: 5793298f
+Mode: Device
+Model: Redmi 10C
+Codename: fog
+Product: lineage_fog
+Transport id: 1
+Superuser mode: False
+Threads count: 1
+Max threads count: 4
+Threads incrase timeout: 0 ms
 ```
 
 ## Device.Handle
