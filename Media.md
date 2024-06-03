@@ -1,5 +1,5 @@
 # Media
-Control playack Android system
+Control playback Android system
 ``` csharp
 Media pb = handle.Media;
 ```
