@@ -50,17 +50,17 @@ Handle handle = device.Handle;
 ## Methods
 Disconnect
 ``` csharp
-device.Disconnect();
+ExitCode exitCode = device.Disconnect();
 ```
 ``` csharp
-await device.DisconnectAsync();
+ExitCode exitCode = await device.DisconnectAsync();
 ```
 Connect back
 ``` csharp
-device.Connect();
+ExitCode exitCode = device.Connect();
 ```
 ``` csharp
-awwait device.ConnectAsync();
+ExitCode exitCode = await device.ConnectAsync();
 ```
 ToString
 ``` csharp
