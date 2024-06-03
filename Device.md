@@ -43,7 +43,7 @@ device.Permission = Permission.Superuser;
 // Normal,
 // Superuser
 ```
-Get handle
+Get [Handle](https://github.com/NeroXc92/AdbSharp/blob/main/Handle.md)
 ``` csharp
 Handle handle = device.Handle;
 ```
