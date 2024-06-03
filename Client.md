@@ -20,7 +20,7 @@ client.Connect(ip, port);
 ```
 ToString
 ``` csharp
-Console.WriteLine(device);
+Console.WriteLine(client);
 ```
 ### Output
 ```
