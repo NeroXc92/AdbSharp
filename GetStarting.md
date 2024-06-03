@@ -4,21 +4,21 @@
 
 ## In C# code:
 Create client:
-````
+```` csharp
 Client client = new("C:\\adb\\adb.exe"); // Use adb.exe path
-````
+```` 
 Get actual devices list:
-````
+````  csharp
 Device[] devices = await client.GetDevicesAsync();
 ````
 For example, print all devices to console
-```` 
+````  csharp
 foreach (Device device in devices)
 {
     Console.WriteLine($"{device}\n");
 }
 ````
-```` 
+````  csharp
 // Output
 
 // Serial number: 5793298f
@@ -34,6 +34,6 @@ foreach (Device device in devices)
 ````
 ## Device.Handle
 Device object has Handle. It is needed to control the device
-```` 
+````  csharp
 Handle handle = device.Handle;
 ````
