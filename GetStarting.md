@@ -3,6 +3,17 @@
 - Extract to any location. I use C:\adb
 
 ## In C# Code:
+Add usings:
+```csharp
+using AdbSharp;
+using AdbSharp.Devices;
+using AdbSharp.Server;
+using AdbSharp.Structs;
+using AdbSharp.Enums;
+using AdbSharp.Extensions;
+using AdbSharp.Interfaces;
+```
+
 Create client:
 ```csharp
 Client client = new(@"C:\adb\adb.exe"); // Use adb.exe path
