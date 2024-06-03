@@ -18,3 +18,13 @@ string ip = "192.168.0.5";
 int port = 65001;
 client.Connect(ip, port);
 ```
+ToString
+``` csharp
+Console.WriteLine(device);
+```
+### Output
+```
+Adb path: 'C:\adb\adb.exe'
+Adb directory: 'C:\adb'
+MAX_PATH_SYMBOLS: 31400
+```
