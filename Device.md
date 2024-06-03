@@ -52,9 +52,15 @@ Disconnect
 ``` csharp
 device.Disconnect();
 ```
+``` csharp
+await device.DisconnectAsync();
+```
 Connect back
 ``` csharp
 device.Connect();
+```
+``` csharp
+awwait device.ConnectAsync();
 ```
 ToString
 ``` csharp

@@ -10,6 +10,9 @@ const string command = "echo Hello world";
 ShellResult result = shell.Run(command);
 ```
 ``` csharp
+ShellResult result = await shell.RunAsync(command);
+```
+``` csharp
 // Print output
 Console.WriteLine(result);
 ```
@@ -54,8 +57,14 @@ process.OutputDataRecieved += (s, e) =>
 string data = process.Output.ReadToEnd();
 ```
 ``` csharp
+string data = await process.Output.ReadToEndAsync();
+```
+``` csharp
 // Wait for exit
 process.WaitForExit();
+```
+``` csharp
+await process.WaitForExitAsync();
 ```
 ``` csharp
 // Force kill the process

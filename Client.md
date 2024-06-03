@@ -12,12 +12,18 @@ Get actual devices list:
 ``` csharp
 Device[] devices = client.GetDevices();
 ```
+``` csharp
+Device[] devices = await client.GetDevicesAsync();
+```
 Connect to remote Wi-Fi device using IP and port:
 ``` csharp
 string ip = "192.168.0.5";
 int port = 65001;
 
-client.Connect(ip, port);
+ExitCode exitCode = client.Connect(ip, port);
+```
+``` csharp
+ExitCode exitCode = await client.ConnectAsync(ip, port);
 ```
 ToString
 ``` csharp
