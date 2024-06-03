@@ -14,13 +14,15 @@ Restart adbd listening on
 ``` csharp
 // restart adbd listening on USB
 server.Listener = Listener.OnUsb;
-
+```
+``` csharp
 // restart adbd listening on TCP on PORT
 const int port = 25000;
 
 server.Listener = Listener.OnTcpIp;
 server.TcpPort = port;
 ```
+
 Get server's running port
 ``` csharp
 int port = server.Port;
