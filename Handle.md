@@ -2,15 +2,15 @@
 ``` csharp
 Handle handle = device.Handle;
 ```
-Get shell handle
+Get [Shell](https://github.com/NeroXc92/AdbSharp/blob/main/Shell.md) handle
 ``` csharp
 Shell shell = handle.Shell;
 ```
-Get filesystem handle
+Get [Filesystem](https://github.com/NeroXc92/AdbSharp/blob/main/Filesystem.md) handle
 ``` csharp
 Filesystem fs = handle.Filesystem;
 ```
-Get media handle
+Get [Media](https://github.com/NeroXc92/AdbSharp/blob/main/Media.md) handle
 ``` csharp
 Media media = handle.Media;
 ```
