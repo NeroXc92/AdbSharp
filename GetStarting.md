@@ -5,7 +5,7 @@
 ## In C# code:
 Create client:
 ```` csharp
-Client client = new("C:\\adb\\adb.exe"); // Use adb.exe path
+Client client = new(@"C:\adb\adb.exe"); // Use adb.exe path
 ```` 
 Get actual devices list:
 ````  csharp
