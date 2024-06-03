@@ -94,30 +94,31 @@ Get directory content:
 // For old devices (simple struct)
 LsItem[] items = fs.GetDirectory<LsItem>("sdcard");
 LsItem item = items[0];
-
-string item.FullPath
-string item.Name
-bool item.IsSymlink
-ItemType item.Type
+```
+``` csharp
+// string item.FullPath
+// string item.Name
+// bool item.IsSymlink
+// ItemType item.Type
 ```
 ``` csharp
 // For new devices (very informative struct)
 LsLongItem[] items = fs.GetDirectory<LsLongItem>("sdcard");
 LsLongItem item = items[0];
-
-string item.FullPath
-string item.Name
-bool item.IsSymlink
-Permissions item.item.Owners
-Permissions item.Groups 
-Permissions item.Others 
-string item.Owner
-string item.Group
-DateTime item.CreationDateTime
-int item.HardLinksCount
-ulong item.Size
-ItemType item.Type
-
+```
+``` csharp
+// string item.FullPath
+// string item.Name
+// bool item.IsSymlink
+// Permissions item.item.Owners
+// Permissions item.Groups 
+// Permissions item.Others 
+// string item.Owner
+// string item.Group
+// DateTime item.CreationDateTime
+// int item.HardLinksCount
+// ulong item.Size
+// ItemType item.Type
 ```
 ``` csharp
 // ItemType can be
