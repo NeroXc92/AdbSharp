@@ -1,24 +1,28 @@
-# Get starting
+# Get Starting
 - Download Android Platform Tools by Google: https://dl.google.com/android/repository/platform-tools-latest-windows.zip
 - Extract to any location. I use C:\adb
 
-## In C# code:
+## In C# Code:
 Create client:
-```` csharp
+```csharp
 Client client = new(@"C:\adb\adb.exe"); // Use adb.exe path
-```` 
+```
+
 Get actual devices list:
-````  csharp
+```csharp
 Device[] devices = await client.GetDevicesAsync();
-````
+```
+
 For example, print all devices to console
-````  csharp
+```csharp
 foreach (Device device in devices)
 {
     Console.WriteLine($"{device}\n");
 }
-````
-````  csharp
+```
+
+### Output
+```csharp
 // Output
 
 // Serial number: 5793298f
@@ -31,9 +35,10 @@ foreach (Device device in devices)
 // Threads count: 1
 // Max threads count: 4
 // Threads incrase timeout: 0 ms
-````
+```
+
 ## Device.Handle
 Device object has Handle. It is needed to control the device
-````  csharp
+```csharp
 Handle handle = device.Handle;
-````
+```
