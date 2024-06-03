@@ -93,7 +93,6 @@ Get directory content:
 ``` csharp
 // For old devices (simple struct)
 LsItem[] items = fs.GetDirectory<LsItem>("sdcard");
-LsItem item = items[0];
 ```
 ``` csharp
 // string item.FullPath
@@ -104,7 +103,6 @@ LsItem item = items[0];
 ``` csharp
 // For new devices (very informative struct)
 LsLongItem[] items = fs.GetDirectory<LsLongItem>("sdcard");
-LsLongItem item = items[0];
 ```
 ``` csharp
 // string item.FullPath
