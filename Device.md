@@ -60,7 +60,6 @@ ToString
 ``` csharp
 Console.WriteLine(device);
 ```
-### Output
 ```
 Serial number: 5793298f
 Mode: Device

@@ -23,7 +23,6 @@ ToString
 ``` csharp
 Console.WriteLine(client);
 ```
-### Output
 ```
 Adb path: 'C:\adb\adb.exe'
 Adb directory: 'C:\adb'
