@@ -37,6 +37,11 @@ string transportId = device.TransportId;
 Set superuser mode
 ``` csharp
 device.Permission = Permission.Superuser;
+// Can be:
+
+// None,
+// Normal,
+// Superuser
 ```
 ## Methods
 Disconnect
