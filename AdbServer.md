@@ -17,6 +17,7 @@ server.Listener = Listener.OnUsb;
 
 // restart adbd listening on TCP on PORT
 const int port = 25000;
+
 server.Listener = Listener.OnTcpIp;
 server.TcpPort = port;
 ```
