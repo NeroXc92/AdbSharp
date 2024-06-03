@@ -1,4 +1,4 @@
-# Handle
+# Device.Handle
 ``` csharp
 Handle handle = device.Handle;
 ```

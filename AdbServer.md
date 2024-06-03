@@ -1,4 +1,4 @@
-# Adb server
+# AdbServer
 ``` csharp
 AdbServer server = client.Server;
 ```

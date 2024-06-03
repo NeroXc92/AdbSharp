@@ -1,4 +1,4 @@
-# Shell
+# Device.Handle.Shell
 Executes in exec-out or shell any command.
 ``` csharp
 Shell shell = handle.Shell;
