@@ -105,18 +105,18 @@ LsItem item = items[0];
 LsLongItem[] items = fs.GetDirectory<LsLongItem>("sdcard");
 LsLongItem item = items[0];
 
-// string FullPath
-// string Name
-// bool IsSymlink
-// Permissions Owners
-// Permissions Groups 
-// Permissions Others 
-// string Owner
-// string Group
-// DateTime CreationDateTime
-// int HardLinksCount
-// ulong Size
-// ItemType Type
+// string item.FullPath
+// string item.Name
+// bool item.IsSymlink
+// Permissions item.item.Owners
+// Permissions item.Groups 
+// Permissions item.Others 
+// string item.Owner
+// string item.Group
+// DateTime item.CreationDateTime
+// int item.HardLinksCount
+// ulong item.Size
+// ItemType item.Type
 
 ```
 ``` csharp
