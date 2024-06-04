@@ -118,6 +118,7 @@ foreach (LsLongItem item in items)
     Console.WriteLine($"{item}\n");
 }
 ```
+### Output
 ```
 Name: 'test.zip'
 Type: File
@@ -139,6 +140,7 @@ foreach (LsItem item in items)
     Console.WriteLine($"{item}\n");
 }
 ```
+### Output
 ```
 Name: 'ViperFX.RE.5.7.apk'
 Type: File
