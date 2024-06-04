@@ -135,6 +135,19 @@ Partition partition = Partition.MicroSD; // Auto detect microsd partition
 
 fs.UnmountPartition(partition);
 ```
+Check for partition mounted:
+``` csharp
+Partition partition = Partition.MicroSD;
+
+if (fs.PartitionMounted(partition))
+{
+    // Mounted
+}
+else
+{
+    // not mounted
+}
+```
 Get directory content:
 ItemType can be File, Directory
 ``` csharp
