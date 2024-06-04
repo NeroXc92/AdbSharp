@@ -20,10 +20,7 @@ Connect to remote Wi-Fi device using IP and port:
 string ip = "192.168.0.5";
 int port = 65001;
 
-ExitCode exitCode = client.Connect(ip, port);
-```
-``` csharp
-ExitCode exitCode = await client.ConnectAsync(ip, port);
+client.Connect(ip, port);
 ```
 ToString
 ``` csharp

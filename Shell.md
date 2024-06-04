@@ -10,9 +10,6 @@ const string command = "echo Hello world";
 ShellResult result = shell.Run(command);
 ```
 ``` csharp
-ShellResult result = await shell.RunAsync(command);
-```
-``` csharp
 // Print output
 Console.WriteLine(result);
 ```
