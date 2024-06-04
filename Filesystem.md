@@ -89,38 +89,31 @@ const string dest = @"C:\adb";
 
 fs.Pull(source, dest);
 ```
-Get directory content:
+Extract archive:
 ``` csharp
-// For old devices (simple struct)
-LsItem[] items = fs.GetDirectory<LsItem>("sdcard");
-```
-``` csharp
-// string item.FullPath
-// string item.Name
-// bool item.IsSymlink
-// ItemType item.Type
-```
-``` csharp
-// For new devices (very informative struct)
-LsLongItem[] items = fs.GetDirectory<LsLongItem>("sdcard");
-```
-``` csharp
-// string item.FullPath
-// string item.Name
-// bool item.IsSymlink
-// Permissions item.item.Owners
-// Permissions item.Groups 
-// Permissions item.Others 
-// string item.Owner
-// string item.Group
-// DateTime item.CreationDateTime
-// int item.HardLinksCount
-// ulong item.Size
-// ItemType item.Type
-```
-``` csharp
-// ItemType can be
+const string archive = "/sdcard/magisk.zip";
 
-// File
-// Directory
+fs.ExtractArchive(archive);
+```
+Extract archive to destination directory:
+``` csharp
+const string archive = "/sdcard/magisk.zip";
+const string dest = "/sdcard/Magisk";
+
+fs.ExtractArchive(archive, dest);
+```
+Get directory content:
+ItemType can be File, Directory
+``` csharp
+LsItem[] items = fs.GetDirectory<LsItem>("sdcard"); // For old devices (simple struct)
+```
+``` csharp
+LsLongItem[] items = fs.GetDirectory<LsLongItem>("sdcard"); // For new devices (informative struct)
+```
+``` csharp
+// Print all items (his info)
+foreach (LsLongItem item in items)
+{
+	Console.WriteLine(item);
+}
 ```
