@@ -21,13 +21,31 @@ Create directory:
 ``` csharp
 const string dir = "/sdcard/My folder";
 
-fs.CreateDirectory(dir);
+ExitCode exitCode = fs.CreateDirectory(dir);
+
+if (exitCode == ExitCode.Success)
+{
+	// Success
+}
+else
+{
+	// Error
+}
 ```
 Create file:
 ``` csharp
 const string file = "/sdcard/Documents/Test.txt";
 
-fs.CreateFile(file);
+ExitCode exitCode = fs.CreateFile(file);
+
+if (exitCode == ExitCode.Success)
+{
+	// Success
+}
+else
+{
+	// Error
+}
 ```
 Check for directory exists:
 ``` csharp
@@ -35,7 +53,11 @@ const string dir = "/sdcard/My folder";
 
 if (fs.DirectoryExists(dir))
 {
-	
+	// Directory exists
+}
+else
+{
+	// Directory not exists
 }
 ```
 Check for file exists:
@@ -44,7 +66,11 @@ const string file = "/sdcard/My file.txt";
 
 if (fs.FileExists(file))
 {
-	
+	// File exists
+}
+else
+{
+	// File not exists
 }
 ```
 Write text to file:
