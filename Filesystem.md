@@ -111,9 +111,39 @@ List<LsItem> items = fs.GetDirectory<LsItem>("sdcard"); // For old devices (simp
 List<LsLongItem> items = fs.GetDirectory<LsLongItem>("sdcard"); // For new devices (informative struct)
 ```
 ``` csharp
-// Print all items (his info)
+// Print all long items (his info)
+List<LsLongItem> items = await fs.GetDirectoryAsync<LsLongItem>("sdcard");
 foreach (LsLongItem item in items)
 {
-	Console.WriteLine(item);
+    Console.WriteLine($"{item}\n");
 }
+```
+```
+Name: 'test.zip'
+Type: File
+Full path: '/sdcard/test.zip'
+Is symlink: False
+Owner: root
+Group: everybody
+Creation date time: 02.06.2024 0:30:00
+Hard links count: 1
+Size: 1093182886 bytes
+
+...
+```
+``` csharp
+// Print all simple items (his info)
+List<LsItem> items = await fs.GetDirectoryAsync<LsItem>("sdcard");
+foreach (LsItem item in items)
+{
+    Console.WriteLine($"{item}\n");
+}
+```
+```
+Name: 'ViperFX.RE.5.7.apk'
+Type: File
+Full path: '/sdcard/ViperFX.RE.5.7.apk'
+Is symlink: False
+
+...
 ```
