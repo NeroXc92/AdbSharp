@@ -4,23 +4,51 @@ AdbServer server = client.Server;
 ```
 Restart adbd with/without root permissions
 ``` csharp
-// restart adbd with root permissions
-server.Root = true;
 
-// restart adbd without root permissions
-server.Root = false;
+try
+{
+	// restart adbd with root permissions
+	server.Root = true;
+
+	// restart adbd without root permissions
+	server.Root = false;
+
+  // Success
+}
+catch (AdbSharpException ex)
+{
+	// Error
+}
 ```
 Restart adbd listening on
 ``` csharp
 // restart adbd listening on USB
-server.Listener = Listener.OnUsb;
+try
+{
+	server.Listener = Listener.OnUsb;
+  
+  // Success
+}
+catch (AdbSharpException ex)
+{
+	// Error
+}
 ```
 ``` csharp
 // restart adbd listening on TCP on PORT
 const int port = 25000;
 
-server.Listener = Listener.OnTcpIp;
-server.TcpPort = port;
+try
+{
+	server.Listener = Listener.OnTcpIp;
+	server.TcpPort = port;
+
+  // Success
+}
+catch (AdbSharpException ex)
+{
+	// Error
+}
 ```
 
 Get server's running port
@@ -30,17 +58,53 @@ int port = server.Port;
 ## Methods
 Start the adb server:
 ``` csharp
-server.Start();
+ExitCode exitCode = server.Start();
+
+if (exitCode == ExitCode.Success)
+{
+    // Success
+}
+else
+{
+    // Error
+}
 ```
 Kill the adb server:
 ``` csharp
-server.Kill();
+ExitCode exitCode = server.Kill();
+
+if (exitCode == ExitCode.Success)
+{
+    // Success
+}
+else
+{
+    // Error
+}
 ```
 Reconnect all devices:
 ``` csharp
-server.Reconnect();
+ExitCode exitCode = server.Reconnect();
+
+if (exitCode == ExitCode.Success)
+{
+    // Success
+}
+else
+{
+    // Error
+}
 ```
 Reconnect all offline devices:
 ``` csharp
-server.ReconnectOffline();
+ExitCode exitCode = server.ReconnectOffline();
+
+if (exitCode == ExitCode.Success)
+{
+    // Success
+}
+else
+{
+    // Error
+}
 ```

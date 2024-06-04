@@ -54,11 +54,29 @@ Handle handle = device.Handle;
 ## Methods
 Disconnect
 ``` csharp
-device.Disconnect();
+ExitCode exitCode = device.Disconnect();
+
+if (exitCode == ExitCode.Success)
+{
+    // Success
+}
+else
+{
+    // Error
+}
 ```
 Connect back
 ``` csharp
-device.Connect();
+ExitCode exitCode = device.Connect();
+
+if (exitCode == ExitCode.Success)
+{
+    // Success
+}
+else
+{
+    // Error
+}
 ```
 ToString
 ``` csharp

@@ -1,6 +1,7 @@
 # Client
 ``` csharp
 const string path_to_adb = @"C:\adb\adb.exe";
+
 Client client = new(path_to_adb);
 ```
 Change path to adb.exe:
@@ -11,18 +12,33 @@ client.AdbPath = @"D:\tools\adb.exe";
 Get actual devices list:
 ``` csharp
 List<Device> devices = client.GetDevices();
+
+if (devices == null)
+{
+	// Error get devices
+}
+else if (devices.Count == 0)
+{
+	// No devices
+}
+else
+{
+	// Success
+}
 ```
 Get device by serial:
 ``` csharp
 string serial_number = "your_serial";
 
-Device device1 = devices.Find(x => x.SerialNumber == serial_number)!;
+Device device1 = devices
+	.Find(x => x.SerialNumber == serial_number)!;
 ```
 Get device by model:
 ``` csharp
 string model = "Redmi 10C";
 
-Device device1 = devices.Find(x => x.Model == model)!;
+Device device1 = devices
+	.Find(x => x.Model == model)!;
 ```
 ``` csharp
 if (device1 != null)
@@ -39,7 +55,16 @@ Connect to remote Wi-Fi device using IP and port:
 string ip = "192.168.0.5";
 int port = 65001;
 
-client.Connect(ip, port);
+ExitCode exitCode = client.Connect(ip, port);
+
+if (exitCode == ExitCode.Success)
+{
+    // Success
+}
+else
+{
+    // Error
+}
 ```
 ToString
 ``` csharp
