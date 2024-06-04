@@ -9,8 +9,6 @@ string serial = device.SerialNumber;
 Get mode
 ``` csharp
 Mode mode = device.Mode;
-// Can be:
-
 // Device,
 // Recovery,
 // Unauthorized,
@@ -37,11 +35,17 @@ string transportId = device.TransportId;
 Set superuser mode
 ``` csharp
 device.Permission = Permission.Superuser;
-// Can be:
-
 // None,
 // Normal,
 // Superuser
+```
+Set initial threads count
+``` csharp
+device.InitialThreads = 2;
+```
+Set maximum threads count (threads will increase gradually to this amount)
+``` csharp
+device.MaxThreads = 7;
 ```
 Get [Handle](https://github.com/NeroXc92/AdbSharp/blob/main/Handle.md)
 ``` csharp
