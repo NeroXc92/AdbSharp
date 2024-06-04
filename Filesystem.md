@@ -105,10 +105,10 @@ fs.ExtractArchive(archive, dest);
 Get directory content:
 ItemType can be File, Directory
 ``` csharp
-LsItem[] items = fs.GetDirectory<LsItem>("sdcard"); // For old devices (simple struct)
+List<LsItem> items = fs.GetDirectory<LsItem>("sdcard"); // For old devices (simple struct)
 ```
 ``` csharp
-LsLongItem[] items = fs.GetDirectory<LsLongItem>("sdcard"); // For new devices (informative struct)
+List<LsLongItem> items = fs.GetDirectory<LsLongItem>("sdcard"); // For new devices (informative struct)
 ```
 ``` csharp
 // Print all items (his info)
