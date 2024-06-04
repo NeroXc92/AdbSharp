@@ -8,14 +8,32 @@ Copy file/directory from source path to dest path:
 const string source = "/sdcard/test.txt";
 const string dest = "/sdcard/test1.txt";
 
-fs.Copy(source, dest);
+ExitCode exitCode = fs.Copy(source, dest);
+
+if (exitCode == ExitCode.Success)
+{
+	// Success
+}
+else
+{
+	// Error
+}
 ```
 Move file/directory from source path to dest path:
 ``` csharp
 const string source = "/sdcard/dir";
 const string dest = "/sdcard/dir1";
 
-fs.Move(source, dest);
+ExitCode exitCode = fs.Move(source, dest);
+
+if (exitCode == ExitCode.Success)
+{
+	// Success
+}
+else
+{
+	// Error
+}
 ```
 Create directory:
 ``` csharp
@@ -78,7 +96,16 @@ Write text to file:
 const string file = "/sdcard/1.txt";
 const string content = "This is test";
 
-fs.WriteTextToFile(file, content);
+ExitCode exitCode = fs.WriteTextToFile(file, content);
+
+if (exitCode == ExitCode.Success)
+{
+	// Success
+}
+else
+{
+	// Error
+}
 ```
 ``` csharp
 const string file = "/sdcard/1.txt";
@@ -95,6 +122,15 @@ Read text from file:
 const string file = "/sdcard/1.txt";
 
 string data = fs.ReadTextFromFile(file);
+
+if (data != null)
+{
+	// Success read
+}
+else
+{
+	// Error read
+}
 ```
 ``` csharp
 const string file = "/sdcard/1.txt";
@@ -106,20 +142,47 @@ Push file/directory from PC to device:
 const string source = @"C:\adb\test.img";
 const string dest = "/sdcard/";
 
-fs.Push(source, dest);
+ExitCode exitCode = fs.Push(source, dest);
+
+if (exitCode == ExitCode.Success)
+{
+	// Success
+}
+else
+{
+	// Error
+}
 ```
 Pull file/directory from device to PC:
 ``` csharp
 const string source = "/sdcard/test.img";
 const string dest = @"C:\adb";
 
-fs.Pull(source, dest);
+ExitCode exitCode = fs.Pull(source, dest);
+
+if (exitCode == ExitCode.Success)
+{
+	// Success
+}
+else
+{
+	// Error
+}
 ```
 Extract archive:
 ``` csharp
 const string archive = "/sdcard/magisk.zip";
 
-fs.ExtractArchive(archive);
+ExitCode exitCode = fs.ExtractArchive(archive);
+
+if (exitCode == ExitCode.Success)
+{
+	// Success
+}
+else
+{
+	// Error
+}
 ```
 Extract archive to destination directory:
 ``` csharp
@@ -132,7 +195,16 @@ Mount partition:
 ``` csharp
 string partition = "system_root";
 
-fs.MountPartition(partition);
+ExitCode exitCode = fs.MountPartition(partition);
+
+if (exitCode == ExitCode.Success)
+{
+	// Success
+}
+else
+{
+	// Error
+}
 ```
 ``` csharp
 Partition partition = Partition.System; // Auto detect system partition
@@ -199,7 +271,7 @@ else
 	// Print all items (his info)
 	foreach (LsLongItem item in items)
 	{
-		Console.WriteLine(item);
+		Console.WriteLine("{item}\n");
 	}
 }
 ```
