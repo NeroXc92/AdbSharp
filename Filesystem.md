@@ -144,9 +144,23 @@ LsItem[] items = fs.GetDirectory<LsItem>("sdcard"); // For old devices (simple s
 LsLongItem[] items = fs.GetDirectory<LsLongItem>("sdcard"); // For new devices (informative struct)
 ```
 ``` csharp
-// Print all items (his info)
-foreach (LsLongItem item in items)
+if (items == null!)
 {
-	Console.WriteLine(item);
+	// Error get directory (For example, not permissions)
+	// For give superuser permissions, set device Permission = Permission.Superuser
+}
+else if (items.Count == 0)
+{
+	// Directory is empty
+}
+else
+{
+	// Success
+	
+	// Print all items (his info)
+	foreach (LsLongItem item in items)
+	{
+		Console.WriteLine(item);
+	}
 }
 ```
