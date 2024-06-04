@@ -10,7 +10,29 @@ client.AdbPath = @"D:\tools\adb.exe";
 ## Methods
 Get actual devices list:
 ``` csharp
-Device[] devices = client.GetDevices();
+List<Device> devices = client.GetDevices();
+```
+Get device by serial:
+``` csharp
+string serial_number = "your_serial";
+
+Device device1 = devices.Find(x => x.SerialNumber == serial_number)!;
+```
+Get device by model:
+``` csharp
+string model = "Redmi 10C";
+
+Device device1 = devices.Find(x => x.Model == model)!;
+```
+``` csharp
+if (device1 != null)
+{
+    // device found
+}
+else
+{
+    // device not found
+}
 ```
 Connect to remote Wi-Fi device using IP and port:
 ``` csharp
