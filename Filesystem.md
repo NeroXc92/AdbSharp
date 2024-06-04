@@ -102,50 +102,51 @@ const string dest = "/sdcard/Magisk";
 
 fs.ExtractArchive(archive, dest);
 ```
+Mount partition:
+``` csharp
+string partition = "system_root";
+
+fs.MountPartition(partition);
+```
+``` csharp
+Partition partition = Partition.System; // Auto detect system partition
+
+fs.MountPartition(partition);
+```
+Mount partition to R/W or R/O:
+``` csharp
+string partition = "system_root";
+MountOptions options = MountOptions.ReadWrite;
+
+ExitCode exitCode = fs.MountPartition(partition, options);
+
+if (exitCode == ExitCode.Success)
+{ 
+    // Success remounted to R/W
+}
+else
+{
+    // Error mount
+}
+```
+Unmount partition:
+``` csharp
+Partition partition = Partition.MicroSD; // Auto detect microsd partition
+
+fs.UnmountPartition(partition);
+```
 Get directory content:
 ItemType can be File, Directory
 ``` csharp
-List<LsItem> items = fs.GetDirectory<LsItem>("sdcard"); // For old devices (simple struct)
+LsItem[] items = fs.GetDirectory<LsItem>("sdcard"); // For old devices (simple struct)
 ```
 ``` csharp
-List<LsLongItem> items = fs.GetDirectory<LsLongItem>("sdcard"); // For new devices (informative struct)
+LsLongItem[] items = fs.GetDirectory<LsLongItem>("sdcard"); // For new devices (informative struct)
 ```
 ``` csharp
-// Print all long items (his info)
-List<LsLongItem> items = await fs.GetDirectoryAsync<LsLongItem>("sdcard");
+// Print all items (his info)
 foreach (LsLongItem item in items)
 {
-    Console.WriteLine($"{item}\n");
+	Console.WriteLine(item);
 }
-```
-### Output
-```
-Name: 'test.zip'
-Type: File
-Full path: '/sdcard/test.zip'
-Is symlink: False
-Owner: root
-Group: everybody
-Creation date time: 02.06.2024 0:30:00
-Hard links count: 1
-Size: 1093182886 bytes
-
-...
-```
-``` csharp
-// Print all simple items (his info)
-List<LsItem> items = await fs.GetDirectoryAsync<LsItem>("sdcard");
-foreach (LsItem item in items)
-{
-    Console.WriteLine($"{item}\n");
-}
-```
-### Output
-```
-Name: 'ViperFX.RE.5.7.apk'
-Type: File
-Full path: '/sdcard/ViperFX.RE.5.7.apk'
-Is symlink: False
-
-...
 ```
