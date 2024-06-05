@@ -29,6 +29,17 @@ else
 	// Execution, exit code not exist
 }
 ```
+Run use ShellStartInfo:
+``` csharp
+ShellStartInfo info = new()
+{ 
+    FileName = "echo",
+    Arguments = "Hello world",
+    Permission = Permission.Superuser
+};
+
+ShellResult result = shell.Run(info);
+```
 CreateProcess:
 ``` csharp
 ShellProcess process = shell.CreateProcess();
