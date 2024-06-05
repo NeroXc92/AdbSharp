@@ -290,6 +290,9 @@ else
 PartitionInfo systemInfo = fs.GetPartitionInfo(Partition.SystemExt);
 Console.WriteLine($"{systemInfo}\n");
 
+PartitionInfo vendorInfo = fs.GetPartitionInfo(Partition.Vendor);
+Console.WriteLine($"{vendorInfo}\n");
+
 PartitionInfo internalStorageInfo = fs.GetPartitionInfo(Partition.InternalStorage);
 Console.WriteLine($"{internalStorageInfo}\n");
 
@@ -313,6 +316,14 @@ Size: 854589440 bytes
 Used: 753926144 bytes
 Available: 83886080 bytes
 Using percentage: 90%
+
+Partition: Vendor
+Full path: '/vendor'
+Mounted on: '/vendor'
+Size: 946864128 bytes
+Used: 842006528 bytes
+Available: 88080384 bytes
+Using percentage: 91%
 
 Partition: InternalStorage
 Full path: '/sdcard'
