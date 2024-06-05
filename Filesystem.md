@@ -275,23 +275,21 @@ else
 	}
 }
 ```
-Get partition information:
+Get partition(s) information:
 ``` csharp
-DfPartition root = DfPartition.Root;
-DfPartition internalStorage = DfPartition.InternalStorage;
-DfPartition microsd = DfPartition.MicroSD;
+PartitionInfo rootInfo = fs.GetPartitionInfo(Partition.Root);
+PartitionInfo systemInfo = fs.GetPartitionInfo(Partition.SystemExt);
+PartitionInfo internalStorageInfo = fs.GetPartitionInfo(Partition.InternalStorage);
+PartitionInfo microsdInfo = fs.GetPartitionInfo(Partition.MicroSD);
 
-PartitionInfo rootInfo = await fs.GetPartitionInfoAsync(root);
-PartitionInfo internalStorageInfo = await fs.GetPartitionInfoAsync(internalStorage);
-PartitionInfo microsdInfo = await fs.GetPartitionInfoAsync(microsd);
-
-if (rootInfo == null && internalStorageInfo == null && microsdInfo == null)
+if (rootInfo == null && systemInfo == null && internalStorageInfo == null && microsdInfo == null)
 {
 	// Error get partition info
 }
 else
 {
 	Console.WriteLine($"{rootInfo}\n");
+	Console.WriteLine($"{systemInfo}\n");
 	Console.WriteLine($"{internalStorageInfo}\n");
 	Console.WriteLine(microsdInfo);
 }
@@ -306,12 +304,20 @@ Used: 927989760 bytes
 Available: 82837504 bytes
 Using percentage: 92%
 
+Partition: SystemExt
+Full path: '/system_ext'
+Mounted on: '/system_ext'
+Size: 854589440 bytes
+Used: 753926144 bytes
+Available: 83886080 bytes
+Using percentage: 90%
+
 Partition: InternalStorage
 Full path: '/sdcard'
 Mounted on: '/storage/emulated'
 Size: 109521666048 bytes
 Used: 50465865728 bytes
-Available: 59055800320 bytes
+Available: 60129542144 bytes
 Using percentage: 46%
 
 Partition: MicroSD
