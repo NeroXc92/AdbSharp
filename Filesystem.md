@@ -3,6 +3,20 @@
 Filesystem fs = handle.Filesystem;
 ```
 ## Methods
+Delete file/directory/symlink:
+``` csharp
+const string path = "/sdcard/Android";
+ExitCode exitCode = fs.Delete(path);
+
+if (exitCode == ExitCode.Success)
+{
+	// Success
+}
+else
+{
+	// Error
+}
+```
 Copy file/directory from source path to dest path:
 ``` csharp
 const string source = "/sdcard/test.txt";
@@ -91,6 +105,17 @@ else
 	// File not exists
 }
 ```
+Check for symlink exists:
+``` csharp
+if (fs.SymlinkExists("/data/my_system"))
+{
+    // Exists
+}
+else
+{
+    // Not exists
+}
+```
 Write text to file:
 ``` csharp
 const string file = "/sdcard/1.txt";
@@ -167,6 +192,18 @@ if (exitCode == ExitCode.Success)
 else
 {
 	// Error
+}
+```
+Create symlink:
+``` csharp
+ExitCode exitCode = fs.CreateSymlink("/system", "/data/my_system");
+if (exitCode == 0)
+{
+    // Success
+}
+else
+{
+    // Error
 }
 ```
 Extract archive:
