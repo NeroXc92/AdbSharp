@@ -306,7 +306,7 @@ Used: 927989760 bytes
 Available: 82837504 bytes
 Using percentage: 92%
 
-Partition: InternalStorage 
+Partition: InternalStorage
 Full path: '/sdcard'
 Mounted on: '/storage/emulated'
 Size: 109521666048 bytes
