@@ -307,7 +307,8 @@ Mounted on: '/'
 Size: 1028653056 bytes
 Used: 927989760 bytes
 Available: 82837504 bytes
-Using percentage: 90,21%
+Used percentage: 90,21%
+Available percentage: 9,79%
 
 Partition: SystemExt
 Full path: '/system_ext'
@@ -315,7 +316,8 @@ Mounted on: '/system_ext'
 Size: 854589440 bytes
 Used: 753926144 bytes
 Available: 83886080 bytes
-Using percentage: 88,22%
+Used percentage: 88,22%
+Available percentage: 11,78%
 
 Partition: Vendor
 Full path: '/vendor'
@@ -323,7 +325,8 @@ Mounted on: '/vendor'
 Size: 946864128 bytes
 Used: 842006528 bytes
 Available: 88080384 bytes
-Using percentage: 88,93%
+Used percentage: 88,93%
+Available percentage: 11,07%
 
 Partition: InternalStorage
 Full path: '/sdcard'
@@ -331,7 +334,8 @@ Mounted on: '/storage/emulated'
 Size: 109521666048 bytes
 Used: 50465865728 bytes
 Available: 60129542144 bytes
-Using percentage: 46,08%
+Used percentage: 46,08%
+Available percentage: 53,92%
 
 Partition: MicroSD
 Full path: '/storage/FDF7-F207'
@@ -339,5 +343,6 @@ Mounted on: '/storage/FDF7-F207'
 Size: 125627793408 bytes
 Used: 18253611008 bytes
 Available: 107374182400 bytes
-Using percentage: 14,53%
+Used percentage: 14,53%
+Available percentage: 85,47%
 ```
