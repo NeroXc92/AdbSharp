@@ -6,6 +6,7 @@
 Add usings:
 ```csharp
 using AdbSharp;
+using AdbSharp.Classes;
 using AdbSharp.Devices;
 using AdbSharp.Enums;
 using AdbSharp.Extensions;
