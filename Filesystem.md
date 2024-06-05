@@ -278,21 +278,23 @@ else
 Get partition(s) information:
 ``` csharp
 PartitionInfo rootInfo = fs.GetPartitionInfo(Partition.Root);
-PartitionInfo systemInfo = fs.GetPartitionInfo(Partition.SystemExt);
-PartitionInfo internalStorageInfo = fs.GetPartitionInfo(Partition.InternalStorage);
-PartitionInfo microsdInfo = fs.GetPartitionInfo(Partition.MicroSD);
-
-if (rootInfo == null && systemInfo == null && internalStorageInfo == null && microsdInfo == null)
+if (rootInfo != null)
 {
-	// Error get partition info
+    Console.WriteLine($"{rootInfo}\n");
 }
 else
 {
-	Console.WriteLine($"{rootInfo}\n");
-	Console.WriteLine($"{systemInfo}\n");
-	Console.WriteLine($"{internalStorageInfo}\n");
-	Console.WriteLine(microsdInfo);
+    // Error get info
 }
+
+PartitionInfo systemInfo = fs.GetPartitionInfo(Partition.SystemExt);
+Console.WriteLine($"{systemInfo}\n");
+
+PartitionInfo internalStorageInfo = fs.GetPartitionInfo(Partition.InternalStorage);
+Console.WriteLine($"{internalStorageInfo}\n");
+
+PartitionInfo microsdInfo = fs.GetPartitionInfo(Partition.MicroSD);
+Console.WriteLine(microsdInfo);
 ```
 ### Output
 ```
