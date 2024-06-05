@@ -1,4 +1,4 @@
-<a href="url"><img src="https://github.com/NeroXc92/AdbSharp/blob/main/logo.png?raw=true" align="center" height="50%" width="50%" ></a>
+<a href="url"><img src="https://github.com/NeroXc92/AdbSharp/blob/main/logo.png?raw=true" align="center" height="70%" width="70%" ></a>
 
 # AdbSharp
 A powerful, convenient, multi-threaded, and highly efficient library for working with adb (Android Debug Bridge) in C# through abstraction (classes, structures, methods).
