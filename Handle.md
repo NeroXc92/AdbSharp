@@ -14,15 +14,16 @@ Get [Media](https://github.com/NeroXc92/AdbSharp/blob/main/Media.md) handle
 ``` csharp
 Media media = handle.Media;
 ```
-## Methods
-Check device rooted
+Check device for rooted
 ``` csharp
-if (handle.CheckPermission() == Permission.Superuser)
+device.Permission = Permission.Auto;
+
+if (device.Permission == Permission.Superuser)
 {
-	// Device rooted
+    // Rooted
 }
 else
 {
-	// Device non rooted
+    // Not rooted
 }
 ```
