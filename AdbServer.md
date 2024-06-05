@@ -50,7 +50,17 @@ catch (AdbSharpException ex)
 	// Error
 }
 ```
-
+Check for adb server is running:
+``` csharp
+if (server.IsRunning)
+{
+	// Running
+}
+else
+{
+	// Not running
+}
+```
 Get server's running port
 ``` csharp
 int port = server.Port;
