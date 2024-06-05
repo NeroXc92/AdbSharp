@@ -281,9 +281,9 @@ DfPartition root = DfPartition.Root;
 DfPartition internalStorage = DfPartition.InternalStorage;
 DfPartition microsd = DfPartition.MicroSD;
 
-StorageInfo rootInfo = await fs.GetPartitionInfoAsync(root);
-StorageInfo internalStorageInfo = await fs.GetPartitionInfoAsync(internalStorage);
-StorageInfo microsdInfo = await fs.GetPartitionInfoAsync(microsd);
+PartitionInfo rootInfo = await fs.GetPartitionInfoAsync(root);
+PartitionInfo internalStorageInfo = await fs.GetPartitionInfoAsync(internalStorage);
+PartitionInfo microsdInfo = await fs.GetPartitionInfoAsync(microsd);
 
 if (rootInfo == null && internalStorageInfo == null && microsdInfo == null)
 {
@@ -299,29 +299,26 @@ else
 ### Output
 ```
 Partition: Root
-        Full path: '/'
-        Mounted on: '/'
-        Mount Filesystem: ''
-        Size: 1028653056 bytes
-        Used: 927989760 bytes
-        Available: 82837504 bytes
-        Using percentage: 92%
+Full path: '/'
+Mounted on: '/'
+Size: 1028653056 bytes
+Used: 927989760 bytes
+Available: 82837504 bytes
+Using percentage: 92%
 
 Partition: InternalStorage
-        Full path: '/sdcard'
-        Mounted on: '/storage/emulated'
-        Mount Filesystem: ''
-        Size: 109521666048 bytes
-        Used: 52613349376 bytes
-        Available: 57982058496 bytes
-        Using percentage: 48%
+Full path: '/sdcard'
+Mounted on: '/storage/emulated'
+Size: 109521666048 bytes
+Used: 50465865728 bytes
+Available: 59055800320 bytes
+Using percentage: 46%
 
 Partition: MicroSD
-        Full path: '/storage/FDF7-F207'
-        Mounted on: '/storage/FDF7-F207'
-        Mount Filesystem: ''
-        Size: 125627793408 bytes
-        Used: 18253611008 bytes
-        Available: 107374182400 bytes
-        Using percentage: 15%
+Full path: '/storage/FDF7-F207'
+Mounted on: '/storage/FDF7-F207'
+Size: 125627793408 bytes
+Used: 18253611008 bytes
+Available: 107374182400 bytes
+Using percentage: 15%
 ```
