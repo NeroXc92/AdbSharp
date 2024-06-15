@@ -22,7 +22,7 @@ Client client = new(@"C:\adb\adb.exe"); // Use adb.exe path
 
 Get actual devices list:
 ```csharp
-Device[] devices = await client.GetDevicesAsync();
+List<Device> devices = await client.GetDevicesAsync();
 ```
 
 For example, print all devices to console
