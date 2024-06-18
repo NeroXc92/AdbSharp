@@ -40,7 +40,7 @@ ShellStartInfo info = new()
 
 ShellResult result = shell.Run(info);
 ```
-CreateProcess:
+CreateProcess (ShellProcess):
 ``` csharp
 ShellProcess process = shell.CreateProcess();
 process.StartInfo.FileName = "echo";
@@ -79,4 +79,46 @@ bool isRunning = !process.HasExited;
 ``` csharp
 // Check for success execution
 ExitCode exitcode = process.ExitCode;
+```
+``` csharp
+// Close and dispose ShellProcess
+process.Dispose();
+```
+CreateSession (ShellSession):
+``` csharp
+ShellSession shellSession = device1.Handle.Shell.CreateSession();
+shellSession.OutputDataRecieved += (s, e) =>
+{
+    Console.WriteLine(e.Data);
+};
+shellSession.Start();
+
+// For example emulate adb shell
+while (true)
+{
+    string command = Console.ReadLine()!;
+    
+    ExitCode exitCode = await shellSession.RunAsync(command);
+    
+    // Check for success execution
+    if (exitCode == ExitCode.Success)
+    {
+        // Success
+    }
+    else
+    {
+        // Error
+    }
+}
+```
+``` csharp
+// For example, run multiple commands
+_ = await shellSession.RunAsync("echo Hello World!");
+_ = await shellSession.RunAsync("cd system");
+_ = await shellSession.RunAsync("cd app");
+_ = await shellSession.RunAsync("ls");
+```
+``` csharp
+// Close and dispose ShellSession
+shellSession.Dispose();
 ```
