@@ -92,7 +92,8 @@ shellSession.OutputDataRecieved += (s, e) =>
     Console.WriteLine(e.Data);
 };
 shellSession.Start();
-
+```
+``` csharp
 // For example emulate adb shell
 while (true)
 {
