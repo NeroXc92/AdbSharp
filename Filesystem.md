@@ -156,12 +156,16 @@ else
 }
 ```
 Get directory content:
-ItemType can be File, Directory
+FileType can be File, Directory
 ``` csharp
-List<LsItem> items = fs.GetDirectory<LsItem>("sdcard"); // For old devices (simple struct)
+List<LsItem> items = fs.GetDirectory(ItemsType.LsShort, "sdcard"); // For old devices (simple struct)
 ```
 ``` csharp
-List<LsLongItem> items = fs.GetDirectory<LsLongItem>("sdcard"); // For new devices (informative struct)
+List<LsLongItem> items = fs.GetDirectory(ItemsType.LsLong, "sdcard"); // For new devices (informative struct)
+```
+``` csharp
+// By default, used LsLong
+List<LsLongItem> items = fs.GetDirectory("sdcard");
 ```
 ``` csharp
 if (items == null)
@@ -178,7 +182,7 @@ else
 	// Success
 	
 	// Print all items (his info)
-	foreach (LsLongItem item in items)
+	foreach (IDirectoryItem item in items)
 	{
 		Console.WriteLine("{item}\n");
 	}
@@ -289,9 +293,10 @@ string SourcePath = e.SourcePath;
 ```
 CreateDirectoryReader
 ``` csharp
-const string path = "sdcard";
-
-DirectoryReader reader = fs.CreateDirectoryReader(path);
+const string path = "/sdcard/";
+DirectoryReader reader = fs.CreateDirectoryReader();
+reader.Directory = path;
+reader.ItemsType = ItemsType.LsLong;
 ```
 ``` csharp
 // ItemRecieved (IDirectoryItem)
@@ -302,7 +307,7 @@ reader.ItemRecieved += (s, e) =>
 ```
 ``` csharp
 // Start reader and wait to finish
-ExitCode exitCode = await reader.ReadAsync<LsLongItem>();
+ExitCode exitCode = await reader.ReadAsync();
 ```
 ### Output
 ```
