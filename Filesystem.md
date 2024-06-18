@@ -158,10 +158,10 @@ else
 Get directory content:
 FileType can be File, Directory
 ``` csharp
-List<LsItem> items = fs.GetDirectory(ItemsType.LsShort, "sdcard"); // For old devices (simple struct)
+List<LsItem> items = fs.GetDirectory(ItemsType.LsShort, "sdcard"); // simple struct
 ```
 ``` csharp
-List<LsLongItem> items = fs.GetDirectory(ItemsType.LsLong, "sdcard"); // For new devices (informative struct)
+List<LsLongItem> items = fs.GetDirectory(ItemsType.LsLong, "sdcard"); // informative struct
 ```
 ``` csharp
 // By default, used LsLong
@@ -187,6 +187,11 @@ else
 		Console.WriteLine("{item}\n");
 	}
 }
+```
+``` csharp
+// ItemsType
+ItemsType.LsLong
+ItemsType.LsShort
 ```
 Get partition(s) information:
 ``` csharp
