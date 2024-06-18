@@ -184,7 +184,7 @@ else
 	// Print all items (his info)
 	foreach (IDirectoryItem item in items)
 	{
-		Console.WriteLine("{item}\n");
+		Console.WriteLine(item + Environment.NewLine);
 	}
 }
 ```
