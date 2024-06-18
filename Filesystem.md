@@ -158,10 +158,10 @@ else
 Get directory content:
 ItemType can be File, Directory
 ``` csharp
-LsItem[] items = fs.GetDirectory<LsItem>("sdcard"); // For old devices (simple struct)
+List<LsItem> items = fs.GetDirectory<LsItem>("sdcard"); // For old devices (simple struct)
 ```
 ``` csharp
-LsLongItem[] items = fs.GetDirectory<LsLongItem>("sdcard"); // For new devices (informative struct)
+List<LsLongItem> items = fs.GetDirectory<LsLongItem>("sdcard"); // For new devices (informative struct)
 ```
 ``` csharp
 if (items == null)
@@ -187,16 +187,16 @@ else
 Get partition(s) information:
 ``` csharp
 PartitionInfo rootInfo = fs.GetPartitionInfo(Partition.Root);
-Console.WriteLine($"{rootInfo}\n");
+Console.WriteLine(rootInfo + Environment.NewLine);
 
 PartitionInfo systemInfo = fs.GetPartitionInfo(Partition.SystemExt);
-Console.WriteLine($"{systemInfo}\n");
+Console.WriteLine(systemInfo + Environment.NewLine);
 
 PartitionInfo vendorInfo = fs.GetPartitionInfo(Partition.Vendor);
-Console.WriteLine($"{vendorInfo}\n");
+Console.WriteLine(vendorInfo + Environment.NewLine);
 
 PartitionInfo internalStorageInfo = fs.GetPartitionInfo(Partition.InternalStorage);
-Console.WriteLine($"{internalStorageInfo}\n");
+Console.WriteLine(internalStorageInfo + Environment.NewLine);
 
 PartitionInfo microsdInfo = fs.GetPartitionInfo(Partition.MicroSD);
 Console.WriteLine(microsdInfo);
@@ -286,4 +286,45 @@ ulong CurrentSize = e.CurrentSize;
 ulong Speed = e.Speed;
 string DestinationPath = e.DestinationPath;
 string SourcePath = e.SourcePath;
+```
+CreateDirectoryReader
+``` csharp
+const string path = "sdcard";
+
+DirectoryReader reader = fs.CreateDirectoryReader(path);
+```
+``` csharp
+// ItemRecieved (IDirectoryItem)
+reader.ItemRecieved += (s, e) =>
+{
+	Console.WriteLine(e.Item + Environment.NewLine);
+};
+```
+``` csharp
+// Start reader and wait to finish
+ExitCode exitCode = await reader.ReadAsync<LsLongItem>();
+```
+### Output
+```
+...
+Name: 'MyMagisk.zip'
+Type: File
+Full path: '/sdcard/MyMagisk.zip'
+Is symlink: False
+Owner: root
+Group: everybody
+Creation date time: 16.06.2024 22:12:00
+Hard links count: 1
+Size: 11,95 M
+
+Name: 'Notifications'
+Type: Directory
+Full path: '/sdcard/Notifications'
+Is symlink: False
+Owner: root
+Group: everybody
+Creation date time: 04.06.2024 2:16:00
+Hard links count: 2
+Size: 0 B
+...
 ```
