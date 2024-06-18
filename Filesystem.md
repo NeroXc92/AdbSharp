@@ -161,11 +161,11 @@ FileType can be File, Directory
 List<LsItem> items = fs.GetDirectory(ItemsType.LsShort, "sdcard"); // simple struct
 ```
 ``` csharp
-List<LsLongItem> items = fs.GetDirectory(ItemsType.LsLong, "sdcard"); // informative struct
+List<LsLongItem> items = fs.GetDirectory(ItemsType.LsLong, "sdcard/"); // informative struct
 ```
 ``` csharp
 // By default, used LsLong
-List<LsLongItem> items = fs.GetDirectory("sdcard");
+List<LsLongItem> items = fs.GetDirectory("/sdcard/");
 ```
 ``` csharp
 if (items == null)
