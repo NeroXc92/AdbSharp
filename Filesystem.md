@@ -311,7 +311,7 @@ reader.ItemRecieved += (s, e) =>
 };
 ```
 ``` csharp
-// Start reader and wait to finish
+// Start reader and wait for finish
 ExitCode exitCode = await reader.ReadAsync();
 ```
 ### Output
